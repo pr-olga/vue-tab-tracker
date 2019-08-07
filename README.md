@@ -7,9 +7,14 @@ by LearnCode.academy https://youtu.be/mZY1yyrlJWU
 
 ## Basics
 ```
+#client
 npm i -g vue-cli
 vue list
 vue init webpack client
 cd client
 npm i && npm run dev
+
+#server
+npm init -f
+npm i --save nodemon eslint
 ```
