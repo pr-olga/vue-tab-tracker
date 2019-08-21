@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./node_modules/nodemon/bin/nodemon.js src/app.js --exec \"npm run lint && node\"",
+    "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "keywords": [],
   "author": "pr-olga",
   "license": "ISC",
   "dependencies": {
-    "eslint": "^6.1.0",
     "nodemon": "^1.19.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.2.1",
+    "eslint-plugin-vue": "^5.2.3"
   }
 }
