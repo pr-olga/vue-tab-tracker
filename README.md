@@ -5,7 +5,7 @@ https://youtu.be/Fa4cRMaTDUI
 ## Preliminary Tutorial
 by LearnCode.academy https://youtu.be/mZY1yyrlJWU
 
-## Basics
+## Basics App
 ```
 #client
 npm i -g vue-cli
@@ -16,5 +16,13 @@ npm i && npm run dev
 
 #server
 npm init -f
-npm i --save nodemon eslint
+npm i --save -D nodemon eslint
+npm install express body-parser cors morgan
 ```
+### Client http Request to server: Axios
+`npm install --save axios`
+
+## Basics Vue
+- binding `v-model`
+- listener `@click`
+- properties: `watch`, `mounted`
