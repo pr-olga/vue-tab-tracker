@@ -15,22 +15,22 @@
 <script>
 import AuthentificationService from '@/services/AuthentificationService'
 export default {
-    name: 'Register',
-    data () {
-        return {
-            email: '',
-            password: ''
-        }
-    },
-    methods: {
-        async register () {
-            const response = await AuthentificationService.register({
-                email: this.email,
-                password: this.password
-            })
-            console.log (response.data)
-        }
+  name: 'Register',
+  data () {
+    return {
+      email: '',
+      password: ''
     }
+  },
+  methods: {
+    async register () {
+      const response = await AuthentificationService.register({
+        email: this.email,
+        password: this.password
+      })
+      console.log(response.data)
+    }
+  }
 /*     watch: {
         email (value) {
             console.log('email has changed', value)
