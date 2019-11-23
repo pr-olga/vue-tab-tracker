@@ -1,10 +1,11 @@
-const Joi = require('@hapi/joi')
+const Joi = require('joi')
 
 module.exports = {
   register(req, res, next) {
-    const schema = Joi.object({
+    const schema = Joi.object().keys({
       password: Joi.string()
-        .pattern(/^[a-zA-Z0-9]{3,30}$/),
+        .regex(
+          new RegExp('^[a-zA-Z0-9]{8,30}$')),
 
       email: Joi.string().email()
     })
