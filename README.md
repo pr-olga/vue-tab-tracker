@@ -35,3 +35,27 @@ npm install express body-parser cors morgan # Dependencies to create express app
 - 27:30 create post request with express
 
 ## Part 2
+### Client
+- include vuetify replaced by include bootsrap-vue
+- 33:20 set up ui for errors
+- 38:00 style to FE, include vuetify
+
+### Server
+- `npm install --save sequelize sqlite303.1.8`
+- Sequelize is ORM used to connecting to dbs
+- sqlite is a local instans of db
+- install @hapi/joi
+	- https://github.com/hapijs/joi
+	- https://github.com/hapijs/joi/blob/master/API.md
+
+
+- add sequelize
+- add config
+- add routes
+- 06:23 create model
+- import fs module (filesystem)
+- 14:30  result of sqlize
+- 16:20 include Controller
+- 18:45 implement Logic for registration
+- 23:15 include joi (_deprecated_)
+- 25:00 expresse middleware `AuthenticationControllerPolicy`
