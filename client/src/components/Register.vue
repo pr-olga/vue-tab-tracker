@@ -2,13 +2,12 @@
     <section class="register">
         <h1>Register</h1>
 
-        <input type="text" name="email" id="" placeholder="email"
+        <b-form-input type="text" name="email" id="" placeholder="email"
         v-model="email"
-        ><br>
-        <input type="password" name="password" id="" placeholder="password"
-        v-model="password"
-        ><br>
-        <button @click="register">Register</button>
+        ></b-form-input><br>
+        <b-form-input type="password" name="password" id="" placeholder="password"
+        v-model="password"></b-form-input><br>
+        <b-button variant="success" @click="register">Register</b-button>
         <div class="error" v-html="error"></div>
     </section>
 </template>
