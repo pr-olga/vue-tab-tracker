@@ -2,11 +2,21 @@
     <section class="register">
         <h1>Register</h1>
 
-        <b-form-input type="text" name="email" id="" placeholder="email"
+        <b-form-input
+        type="text"
+        name="email"
+        id="email"
+        placeholder="email"
         v-model="email"
-        ></b-form-input><br>
-        <b-form-input type="password" name="password" id="" placeholder="password"
-        v-model="password"></b-form-input><br>
+        ></b-form-input>
+        <br>
+        <b-form-input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="password"
+        v-model="password"></b-form-input>
+        <br>
         <b-button variant="success" @click="register">Register</b-button>
         <div class="error" v-html="error"></div>
     </section>
