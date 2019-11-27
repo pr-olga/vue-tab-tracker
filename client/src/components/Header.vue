@@ -17,9 +17,14 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
+      <b-nav-item href="#">
+           <router-link to="login">
+               Login
+           </router-link>
+       </b-nav-item>
        <b-nav-item href="#">
            <router-link to="register">
-               Sign in
+               Sign up
            </router-link>
        </b-nav-item>
       </b-navbar-nav>
