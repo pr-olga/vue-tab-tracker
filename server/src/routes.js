@@ -4,5 +4,7 @@ const AuthenticationcontrollerPolicy = require('./policies/AuthenticationControl
 module.exports = (app) => {
     app.post('/register',
         AuthenticationcontrollerPolicy.register,
-        Authenticationcontroller.register)
+        Authenticationcontroller.register),
+    app.post('/login',
+        Authenticationcontroller.login)
 }
