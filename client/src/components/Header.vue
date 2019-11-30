@@ -17,12 +17,12 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-      <b-nav-item href="#">
+      <b-nav-item v-if="!$store.state.isUserLoggedIn">
            <router-link to="login">
                Login
            </router-link>
        </b-nav-item>
-       <b-nav-item href="#">
+       <b-nav-item v-if="!$store.state.isUserLoggedIn">
            <router-link to="register">
                Sign up
            </router-link>
