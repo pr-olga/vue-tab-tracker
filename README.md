@@ -59,3 +59,18 @@ npm install express body-parser cors morgan # Dependencies to create express app
 - 18:45 implement Logic for registration
 - 23:15 include joi (_deprecated_)
 - 25:00 expresse middleware `AuthenticationControllerPolicy`
+
+## Part 3: Login
+### Client
+- 24:00 implement login
+- 49:00 install vuex
+	1. state
+	2. mutations
+	3. actions
+- To change the state you must invoke the mutations,
+in order to invoke the mutations you must invoke the actions.
+
+### Server
+- 26:02 implement login on server
+- 32:35 install jsonwebtoken
+- 35:20 encrypt password
