@@ -27,6 +27,11 @@
                Sign up
            </router-link>
        </b-nav-item>
+       <b-nav-item v-if="$store.state.isUserLoggedIn">
+         <b-nav-item @click="logout">
+           Log out
+         </b-nav-item>
+       </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -35,6 +40,14 @@
 
 <script>
 export default {
-
+  methods: {
+    logout () {
+      this.$store.dispatch('setToken', null)
+      this.$store.dispatch('setUser', null)
+      this.$router.push({
+        name: 'Home'
+      })
+    }
+  }
 }
 </script>
