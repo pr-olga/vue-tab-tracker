@@ -11,20 +11,17 @@
 </template>
 
 <script>
+import SongsService from '@/services/SongsService'
 
 export default {
   name: 'Songs',
   data () {
     return {
-      songs: [
-        {
-          id: '1',
-          title: 'Title one',
-          artist: 'Artiste one',
-          album: 'Album one'
-        }
-      ]
+      songs: null
     }
+  },
+  async mounted () {
+    this.songs = await SongsService.index()
   }
 }
 </script>
