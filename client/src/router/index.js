@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import Register from '@/components/Register'
-import Login from '@/components/Login'
-import Songs from '@/components/Songs'
+import Home from '@/views/Home'
+import Register from '@/views/Register'
+import Login from '@/views/Login'
+import Songs from '@/views/Songs'
 
 Vue.use(Router)
 
