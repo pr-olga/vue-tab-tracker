@@ -1,25 +1,33 @@
 <template>
   <section class="add-new-song">
-    <h1>Create New Song</h1>
-    <b-form @submit="createsong">
-      <b-form-input required type="text" name="title" id="title" placeholder="title" v-model="song.title"></b-form-input>
-      <br>
-      <b-form-input required type="text" name="artist" id="artist" placeholder="artist" v-model="song.artist"></b-form-input>
-      <br>
-      <b-form-input required type="text" name="genre" id="genre" placeholder="genre" v-model="song.genre"></b-form-input>
-      <br>
-      <b-form-input required type="text" name="album" id="album" placeholder="album" v-model="song.album"></b-form-input>
-      <br>
-      <b-form-input required type="text" name="albumImageURl" id="albumImageURl" placeholder="albumImageURl" v-model="song.albumImageURl"></b-form-input>
-      <br>
-      <b-form-input required type="text" name="youtubeId" id="youtubeId" placeholder="youtubeId" v-model="song.youtubeId"></b-form-input>
-      <br>
-      <b-form-textarea required type="text" name="lyrics" id="lyrics" placeholder="lyrics" v-model="song.lyrics"></b-form-textarea>
-      <br>
-      <b-form-textarea required type="text" name="tab" id="tab" placeholder="tab" v-model="song.tab"></b-form-textarea>
-      <br>
-      <b-button type="submit" variant="success">Register</b-button>
-    </b-form>
+    <b-row align-h="center">
+      <b-col cols="12" md="6">
+        <h1>Create New Song</h1>
+      </b-col>
+    </b-row>
+    <b-row align-h="center" class="mt-3">
+      <b-col cols="12" md="6">
+        <b-form @submit="createsong">
+          <b-form-input required type="text" name="title" id="title" placeholder="title" v-model="song.title"></b-form-input>
+          <br>
+          <b-form-input required type="text" name="artist" id="artist" placeholder="artist" v-model="song.artist"></b-form-input>
+          <br>
+          <b-form-input required type="text" name="genre" id="genre" placeholder="genre" v-model="song.genre"></b-form-input>
+          <br>
+          <b-form-input required type="text" name="album" id="album" placeholder="album" v-model="song.album"></b-form-input>
+          <br>
+          <b-form-input required type="text" name="albumImageURl" id="albumImageURl" placeholder="albumImageURl" v-model="song.albumImageURl"></b-form-input>
+          <br>
+          <b-form-input required type="text" name="youtubeId" id="youtubeId" placeholder="youtubeId" v-model="song.youtubeId"></b-form-input>
+          <br>
+          <b-form-textarea required type="text" name="lyrics" id="lyrics" placeholder="lyrics" v-model="song.lyrics"></b-form-textarea>
+          <br>
+          <b-form-textarea required type="text" name="tab" id="tab" placeholder="tab" v-model="song.tab"></b-form-textarea>
+          <br>
+          <b-button type="submit" variant="success">Register</b-button>
+        </b-form>
+      </b-col>
+    </b-row>
   </section>
 </template>
 
