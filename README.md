@@ -74,3 +74,6 @@ in order to invoke the mutations you must invoke the actions.
 - 26:02 implement login on server
 - 32:35 install jsonwebtoken
 - 35:20 encrypt password
+
+## Part 4: Songs
+- add create songs services to server and to client
