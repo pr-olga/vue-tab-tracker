@@ -8,7 +8,6 @@
         id="title"
         placeholder="title"
         v-model="song.title"
-        :rules="[required]"
         ></b-form-input>
         <br>
         <b-form-input
@@ -81,8 +80,7 @@ export default {
         lyrics: null,
         tab: null,
         error: null
-      },
-      required: (value) => !value || 'Required'
+      }
     }
   },
   methods: {
