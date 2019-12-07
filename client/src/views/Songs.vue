@@ -6,6 +6,17 @@
           {{song.title}} -
           {{song.artist}} -
           {{song.album}}
+          <div>
+            <b-button variant="outline-primary"
+            @click="navigateTo({
+              name: 'song',
+              params: {
+                songId: song.id
+              }
+            })"
+            >View</b-button>
+          </div>
+
         </div>
     </section>
 </template>
@@ -22,6 +33,11 @@ export default {
   },
   async mounted () {
     this.songs = (await SongsService.index()).data
+  },
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    }
   }
 }
 </script>
