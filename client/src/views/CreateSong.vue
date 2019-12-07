@@ -8,6 +8,7 @@
         id="title"
         placeholder="title"
         v-model="song.title"
+        :state="inputValidationState"
         ></b-form-input>
         <br>
         <b-form-input
@@ -88,6 +89,11 @@ export default {
       } catch (error) {
         console.log(error)
       }
+    }
+  },
+  computed: {
+    inputValidationState () {
+      return !!this.song.title
     }
   }
 }
