@@ -60,7 +60,6 @@
         v-model="song.tab"></b-form-textarea>
         <br>
         <b-button variant="success" @click="createsong">Register</b-button>
-        <div class="error" v-html="error"></div>
     </section>
 </template>
 
@@ -78,8 +77,7 @@ export default {
         albumImageURl: null,
         youtubeId: null,
         lyrics: null,
-        tab: null,
-        error: null
+        tab: null
       }
     }
   },
@@ -88,7 +86,7 @@ export default {
       try {
         await SongsService.post(this.song)
       } catch (error) {
-        this.error = error.response.data.error
+        console.log(error)
       }
     }
   }
