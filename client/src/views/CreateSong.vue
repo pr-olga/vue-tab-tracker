@@ -1,17 +1,18 @@
 <template>
     <section class="add-new-song">
         <h1>Create New Song</h1>
-
-        <b-form-input
+<b-form @submit="createsong">
+     <b-form-input
+        required
         type="text"
         name="title"
         id="title"
         placeholder="title"
         v-model="song.title"
-        :state="inputValidationState"
         ></b-form-input>
         <br>
         <b-form-input
+        required
         type="text"
         name="artist"
         id="artist"
@@ -19,6 +20,7 @@
         v-model="song.artist"></b-form-input>
         <br>
         <b-form-input
+        required
         type="text"
         name="genre"
         id="genre"
@@ -26,6 +28,7 @@
         v-model="song.genre"></b-form-input>
         <br>
         <b-form-input
+        required
         type="text"
         name="album"
         id="album"
@@ -33,6 +36,7 @@
         v-model="song.album"></b-form-input>
         <br>
         <b-form-input
+        required
         type="text"
         name="albumImageURl"
         id="albumImageURl"
@@ -40,6 +44,7 @@
         v-model="song.albumImageURl"></b-form-input>
         <br>
         <b-form-input
+        required
         type="text"
         name="youtubeId"
         id="youtubeId"
@@ -47,6 +52,7 @@
         v-model="song.youtubeId"></b-form-input>
         <br>
         <b-form-textarea
+        required
         type="text"
         name="lyrics"
         id="lyrics"
@@ -54,13 +60,15 @@
         v-model="song.lyrics"></b-form-textarea>
         <br>
         <b-form-textarea
+        required
         type="text"
         name="tab"
         id="tab"
         placeholder="tab"
         v-model="song.tab"></b-form-textarea>
         <br>
-        <b-button variant="success" @click="createsong">Register</b-button>
+        <b-button type="submit" variant="success">Register</b-button>
+</b-form>
     </section>
 </template>
 
@@ -79,21 +87,18 @@ export default {
         youtubeId: null,
         lyrics: null,
         tab: null
-      }
+      },
+      error: null
     }
   },
   methods: {
-    async createsong () {
+    async createsong (evt) {
       try {
+        evt.preventDefault();
         await SongsService.post(this.song)
       } catch (error) {
         console.log(error)
       }
-    }
-  },
-  computed: {
-    inputValidationState () {
-      return !!this.song.title
     }
   }
 }
