@@ -43,9 +43,9 @@
       }
     },
     methods: {
-      async createsong(evt) {
+      async createsong(e) {
         try {
-          evt.preventDefault();
+          e.preventDefault()
           await SongsService.post(this.song)
         } catch (error) {
           console.log(error)
