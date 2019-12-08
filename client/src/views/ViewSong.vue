@@ -1,5 +1,15 @@
 <template>
-<h1>Song</h1>
+<section class="single-song">
+    <h1>Song</h1>
+    <div>{{song.title}}</div>
+    <div>{{song.artist}}</div>
+    <div>{{song.genre}}</div>
+    <div>{{song.album}}</div>
+    <div>{{song.albumImageURl}}</div>
+    <div>{{song.youtubeId}}</div>
+    <div>{{song.lyrics}}</div>
+    <div>{{song.tab}}</div>
+</section>
 </template>
 
 <script>
@@ -12,7 +22,7 @@ export default {
   },
   async mounted () {
     const songId = this.$store.state.route.params.songId
-    this.song = await SongsService.show(songId)
+    this.song = (await SongsService.show(songId)).data
   }
 }
 </script>
