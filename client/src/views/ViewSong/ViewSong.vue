@@ -25,7 +25,16 @@ import Tabs from './_includes/TabsSong'
 export default {
   data () {
     return {
-      song: null
+      song: {
+        title: null,
+        artist: null,
+        genre: null,
+        album: null,
+        albumImageURl: null,
+        youtubeId: null,
+        lyrics: null,
+        tab: null
+      }
     }
   },
   async mounted () {
