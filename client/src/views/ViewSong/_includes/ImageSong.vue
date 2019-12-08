@@ -1,13 +1,13 @@
 <template>
   <section class="image-song">
-    <div>{{song.albumImageURl}}</div>
+    <div>{{imageSong}}</div>
   </section>
 </template>
 
 <script>
 export default {
   props: [
-    'song'
+    'imageSong'
   ]
 }
 </script>

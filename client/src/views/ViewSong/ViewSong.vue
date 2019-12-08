@@ -3,8 +3,8 @@
     <h1>Song</h1>
     <meta-data :song='song'>
     </meta-data>
-    <image :song='song'>
-    </image>
+    <image-song :imageSong='song.albumImageURl'>
+    </image-song>
     <you-tube :song='song'>
     </you-tube>
     <lyrics :song='song'>
@@ -17,7 +17,7 @@
 <script>
 import SongsService from '@/services/SongsService'
 import MetaData from './_includes/MetaDataSong'
-import Image from './_includes/ImageSong'
+import ImageSong from './_includes/ImageSong'
 import YouTube from './_includes/YouTubeSong'
 import Lyrics from './_includes/LyricsSong'
 import Tabs from './_includes/TabsSong'
@@ -34,7 +34,7 @@ export default {
   },
   components: {
     MetaData,
-    Image,
+    ImageSong,
     YouTube,
     Lyrics,
     Tabs
