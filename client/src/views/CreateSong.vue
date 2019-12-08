@@ -32,35 +32,35 @@
 </template>
 
 <script>
-  import SongsService from '@/services/SongsService'
-  export default {
-    name: 'CreateSong',
-    data() {
-      return {
-        song: {
-          title: null,
-          artist: null,
-          genre: null,
-          album: null,
-          albumImageURl: null,
-          youtubeId: null,
-          lyrics: null,
-          tab: null
-        },
-        error: null
-      }
-    },
-    methods: {
-      async createsong(e) {
-        try {
-          e.preventDefault()
-          await SongsService.post(this.song)
-        } catch (error) {
-          console.log(error)
-        }
+import SongsService from '@/services/SongsService'
+export default {
+  name: 'CreateSong',
+  data () {
+    return {
+      song: {
+        title: null,
+        artist: null,
+        genre: null,
+        album: null,
+        albumImageURl: null,
+        youtubeId: null,
+        lyrics: null,
+        tab: null
+      },
+      error: null
+    }
+  },
+  methods: {
+    async createsong (e) {
+      try {
+        e.preventDefault()
+        await SongsService.post(this.song)
+      } catch (error) {
+        console.log(error)
       }
     }
   }
+}
 </script>
 
 <style>
