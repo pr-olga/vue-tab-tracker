@@ -5,7 +5,7 @@ import Register from '@/views/Register'
 import Login from '@/views/Login'
 import Songs from '@/views/Songs'
 import CreateSong from '@/views/CreateSong'
-import ViewSong from '@/views/ViewSong'
+import ViewSong from '@/views/ViewSong/ViewSong'
 
 Vue.use(Router)
 
