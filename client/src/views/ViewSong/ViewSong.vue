@@ -3,6 +3,14 @@
     <h1>Song</h1>
     <meta-data :song='song'>
     </meta-data>
+      <b-button variant="outline-primary"
+        @click="navigateTo({
+          name: 'song-edit',
+          params: {
+            songId: song.id
+          }
+        })"
+        >Edit</b-button>
     <image-song :imageSong='song.albumImageURl'>
     </image-song>
     <you-tube :song='song'>
@@ -35,6 +43,11 @@ export default {
         lyrics: null,
         tab: null
       }
+    }
+  },
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
     }
   },
   async mounted () {
