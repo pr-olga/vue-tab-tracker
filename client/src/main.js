@@ -6,7 +6,7 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import {sync} from 'vuex-router-sync'
+import { sync } from 'vuex-router-sync'
 import store from '@/store/store'
 
 Vue.use(BootstrapVue)

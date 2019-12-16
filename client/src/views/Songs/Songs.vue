@@ -1,6 +1,11 @@
 <template>
     <section class="songs">
-      <h1>Songs</h1>
+      <b-row align-h="center">
+        <b-col cols="12" md="7">
+          <h1>Songs</h1>
+        </b-col>
+      </b-row>
+        <search-songs />
         <div v-bind:key="song.id" v-for="song in songs">
           {{song.id}} -
           {{song.title}} -
@@ -23,6 +28,7 @@
 
 <script>
 import SongsService from '@/services/SongsService'
+import SearchSongs from './SearchSongs'
 
 export default {
   name: 'Songs',
@@ -38,6 +44,9 @@ export default {
     navigateTo (route) {
       this.$router.push(route)
     }
+  },
+  components: {
+    SearchSongs
   }
 }
 </script>
