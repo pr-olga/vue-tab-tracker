@@ -77,3 +77,9 @@ in order to invoke the mutations you must invoke the actions.
 
 ## Part 4: Songs
 - add create songs services to server and to client
+
+## Part 5: View and Edit Song
+- 06:10 show single song on Server
+- bug in tutorial: `findById -> deprecated (findByPk)`
+- 21:45 divide Viewsong in Folder
+- 41:15 Edit Song
