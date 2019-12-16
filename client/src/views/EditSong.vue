@@ -7,7 +7,7 @@
     </b-row>
     <b-row align-h="center" class="mt-3">
       <b-col cols="12" md="6">
-        <b-form @submit="editsong">
+        <b-form @submit="savesong">
           <b-form-input required type="text" name="title" id="title" placeholder="title" v-model="song.title"></b-form-input>
           <br>
           <b-form-input required type="text" name="artist" id="artist" placeholder="artist" v-model="song.artist"></b-form-input>
@@ -24,7 +24,7 @@
           <br>
           <b-form-textarea required type="text" name="tab" id="tab" placeholder="tab" v-model="song.tab"></b-form-textarea>
           <br>
-          <b-button type="submit" variant="success">Register</b-button>
+          <b-button type="submit" variant="success">Save Song</b-button>
         </b-form>
       </b-col>
     </b-row>
@@ -51,13 +51,28 @@ export default {
     }
   },
   methods: {
-    async editsong (e) {
+    async savesong (e) {
       try {
         e.preventDefault()
-        await SongsService.post(this.song)
+        const songId = this.$store.state.route.params.songId
+        await SongsService.put(this.song)
+        this.$router.push({
+          name: 'song',
+          params: {
+            songId: songId
+          }
+        })
       } catch (error) {
         console.log(error)
       }
+    }
+  },
+  async mounted () {
+    try {
+      const songId = this.$store.state.route.params.songId
+      this.song = (await SongsService.show(songId)).data
+    } catch (error) {
+      console.log(error)
     }
   }
 }
