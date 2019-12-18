@@ -37,8 +37,13 @@ export default {
       songs: null
     }
   },
-  async mounted () {
-    this.songs = (await SongsService.index()).data
+  watch: {
+    '$route.query.search': {
+      immediate: true,
+      async handler (value) {
+        this.songs = (await SongsService.index(value)).data
+      }
+    }
   },
   methods: {
     navigateTo (route) {
