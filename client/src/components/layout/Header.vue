@@ -2,7 +2,7 @@
 <div>
   <b-navbar toggleable="lg" type="dark" variant="success">
     <b-navbar-brand href="#">
-        <router-link to="/">
+        <router-link tag="span" to="/">
                Tab-Tracker
         </router-link>
     </b-navbar-brand>
@@ -12,12 +12,12 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item>
-          <router-link to="songs">
+          <router-link tag="span" to="songs">
                Browser
            </router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="songs-create">
+          <router-link tag="span" to="songs-create">
                Add
           </router-link>
         </b-nav-item>
@@ -26,12 +26,12 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
       <b-nav-item v-if="!$store.state.isUserLoggedIn">
-           <router-link to="login">
+           <router-link tag="span" to="login">
                Login
            </router-link>
        </b-nav-item>
        <b-nav-item v-if="!$store.state.isUserLoggedIn">
-           <router-link to="register">
+           <router-link tag="span" to="register">
                Sign up
            </router-link>
        </b-nav-item>
