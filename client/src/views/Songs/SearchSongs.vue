@@ -22,7 +22,7 @@ export default {
     }
   },
   watch: {
-    search: _.debounce (async function (value) {
+    search: _.debounce(async function (value) {
       const route = {
         name: 'songs'
       }
