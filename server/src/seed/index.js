@@ -25,7 +25,7 @@ sequelize.sync({ force: true })
     )
 
     await Promise.all(
-      bookmarks.map(song => {
+      bookmarks.map(bookmark => {
         Bookmark.create(bookmark)
       })
     )
