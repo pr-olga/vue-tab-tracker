@@ -11,6 +11,12 @@
           }
         })"
         >Edit</b-button>
+        <b-button variant="outline-primary"
+        @click="bookmark"
+        >Bookmark</b-button>
+        <b-button variant="outline-danger"
+        @click="unbookmark"
+        >unBookmark</b-button>
     <image-song :imageSong='song.albumImageURl'>
     </image-song>
     <you-tube :song='song'>
@@ -48,6 +54,12 @@ export default {
   methods: {
     navigateTo (route) {
       this.$router.push(route)
+    },
+    bookmark () {
+      console.log('bokmark')
+    },
+    unbookmark () {
+      console.log('unbookmark')
     }
   },
   async mounted () {
