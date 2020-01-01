@@ -4,7 +4,7 @@ module.exports = {
   async index (req, res) {
     try {
       const { songId, userId } = req.query
-      const bookmark = await Bookmark.findByPk({
+      const bookmark = await Bookmark.findOne({
         where: {
           SongId: songId,
           UserId: userId
