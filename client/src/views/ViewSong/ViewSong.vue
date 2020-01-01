@@ -65,23 +65,41 @@ export default {
     navigateTo (route) {
       this.$router.push(route)
     },
-    bookmark () {
-      console.log('bokmark')
+    async bookmark () {
+      try {
+        await BookmarksService.post({
+          songId: this.song.id,
+          userId: this.$store.state.user.id
+        })
+      } catch (err) {
+        console.log(err)
+      }
     },
-    unbookmark () {
-      console.log('unbookmark')
+    async unbookmark () {
+      try {
+        await BookmarksService.delete({
+          songId: this.song.id,
+          userId: this.$store.state.user.id
+        })
+      } catch (err) {
+        console.log(err)
+      }
     }
   },
   async mounted () {
     const songId = this.$store.state.route.params.songId
     this.song = (await SongsService.show(songId)).data
 
-    const bookmark = (await BookmarksService.index({
-      songId: songId,
-      userId: this.$store.state.user.id
-    })).data
-    this.isBookmarked = !!bookmark
-    console.log(bookmark)
+    try {
+      const bookmark = (await BookmarksService.index({
+        songId: songId,
+        userId: this.$store.state.user.id
+      })).data
+      this.isBookmarked = !!bookmark
+      console.log(bookmark)
+    } catch (err) {
+      console.log(err)
+    }
   },
   components: {
     MetaData,
