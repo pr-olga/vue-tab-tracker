@@ -11,10 +11,12 @@
           }
         })"
         >Edit</b-button>
-        <b-button variant="outline-primary"
+        <b-button v-if="isUserLoggedIn"
+        variant="outline-primary"
         @click="bookmark"
         >Bookmark</b-button>
-        <b-button variant="outline-danger"
+        <b-button v-if="isUserLoggedIn"
+        variant="outline-danger"
         @click="unbookmark"
         >unBookmark</b-button>
     <image-song :imageSong='song.albumImageURl'>
@@ -35,6 +37,7 @@ import ImageSong from './_includes/ImageSong'
 import YouTube from './_includes/YouTubeSong'
 import Lyrics from './_includes/LyricsSong'
 import Tabs from './_includes/TabsSong'
+import { mapState } from 'vuex'
 
 export default {
   data () {
@@ -50,6 +53,11 @@ export default {
         tab: null
       }
     }
+  },
+  computed: {
+    ...mapState([
+      'isUserLoggedIn'
+    ])
   },
   methods: {
     navigateTo (route) {
