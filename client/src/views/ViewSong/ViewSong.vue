@@ -11,11 +11,11 @@
           }
         })"
         >Edit</b-button>
-        <b-button v-if="isUserLoggedIn"
+        <b-button v-if="isUserLoggedIn && !isBookmarked"
         variant="outline-primary"
         @click="bookmark"
         >Bookmark</b-button>
-        <b-button v-if="isUserLoggedIn"
+        <b-button v-if="isUserLoggedIn && isBookmarked"
         variant="outline-danger"
         @click="unbookmark"
         >unBookmark</b-button>
@@ -52,7 +52,8 @@ export default {
         youtubeId: null,
         lyrics: null,
         tab: null
-      }
+      },
+      isBookmarked: false
     }
   },
   computed: {
@@ -76,9 +77,10 @@ export default {
     this.song = (await SongsService.show(songId)).data
 
     const bookmark = (await BookmarksService.index({
-      songId: 1,
-      userId: 1
+      songId: songId,
+      userId: this.$store.state.user.id
     })).data
+    this.isBookmarked = !!bookmark
     console.log(bookmark)
   },
   components: {
