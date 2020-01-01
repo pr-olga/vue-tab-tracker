@@ -38,6 +38,7 @@ import YouTube from './_includes/YouTubeSong'
 import Lyrics from './_includes/LyricsSong'
 import Tabs from './_includes/TabsSong'
 import { mapState } from 'vuex'
+import BookmarksService from '@/services/BookmarksService'
 
 export default {
   data () {
@@ -73,6 +74,12 @@ export default {
   async mounted () {
     const songId = this.$store.state.route.params.songId
     this.song = (await SongsService.show(songId)).data
+
+    const bookmark = (await BookmarksService.index({
+      songId: 1,
+      userId: 1
+    })).data
+    console.log(bookmark)
   },
   components: {
     MetaData,
