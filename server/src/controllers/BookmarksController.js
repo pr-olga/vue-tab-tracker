@@ -19,8 +19,9 @@ module.exports = {
   },
   async post (req, res) {
     try {
-      const { songId, userId } = req.body
-      const bookmark = await Bookmark.findByPk({
+      const userId = req.body.userId
+      const songId = req.body.songId
+      const bookmark = await Bookmark.findOne({
         where: {
           SongId: songId,
           UserId: userId
@@ -51,7 +52,7 @@ module.exports = {
       res.send(bookmark)
     } catch (err) {
       res.status(500).send({
-        error: 'An error has occured again.'
+        error: 'An error has occured trying to delete a bookmark'
       })
     }
   }
