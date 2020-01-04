@@ -83,3 +83,27 @@ in order to invoke the mutations you must invoke the actions.
 - bug in tutorial: `findById -> deprecated (findByPk)`
 - 21:45 divide Viewsong in Folder
 - 41:15 Edit Song
+
+## Part 6
+__Important Changes__
+
+1. For sequelize 4.41.0, the `$or` and `$like` have been changed to `[Op.or]` and `[Op.like]`
+2. In original version, the server sends `500` after posting or deleting a bookmark. The following adjustments are needed:
+
+		__POST__
+
+		In BookmarksService on client: delete params object
+		```javascript
+		  post (bookmark) {
+				return Api().post('bookmarks', bookmark)
+				}
+		```
+
+		__DELETE__
+		Exclude User from Controller on Server
+
+
+- 37:30 create associations
+- 41:00 add bookmark controller and router
+- 47:17 add bookmark ui
+- 1:04:00 install on client `vuex-persistedstate`

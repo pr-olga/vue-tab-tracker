@@ -90,7 +90,7 @@ export default {
 
     try {
       this.bookmark = (await BookmarksService.index({
-        songId: songId,
+        songId: this.song.id,
         userId: this.$store.state.user.id
       })).data
     } catch (err) {
