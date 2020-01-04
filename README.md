@@ -2,6 +2,8 @@
 A Vue.js/Express.js web application inspired by freeCodeCamp.org
 https://youtu.be/Fa4cRMaTDUI
 
+Original Code of the tutorial: https://github.com/codyseibert/tab-tracker
+
 ## Preliminary Tutorial
 by LearnCode.academy https://youtu.be/mZY1yyrlJWU
 
