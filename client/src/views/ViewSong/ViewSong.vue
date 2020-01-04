@@ -77,10 +77,8 @@ export default {
     },
     async unsetAsBookmark () {
       try {
-        await BookmarksService.delete({
-          songId: this.$store.state.route.params.songId,
-          userId: this.$store.state.user.id
-        })
+        await BookmarksService.delete(this.bookmark.id)
+        this.bookmark = null
       } catch (err) {
         console.log(err)
       }
