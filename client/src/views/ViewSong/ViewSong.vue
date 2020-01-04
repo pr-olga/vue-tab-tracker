@@ -11,13 +11,13 @@
           }
         })"
         >Edit</b-button>
-        <b-button v-if="isUserLoggedIn && !isBookmarked"
+        <b-button v-if="isUserLoggedIn && !bookmark"
         variant="outline-primary"
-        @click="bookmark"
+        @click="setAsBookmark"
         >Bookmark</b-button>
-        <b-button v-if="isUserLoggedIn && isBookmarked"
+        <b-button v-if="isUserLoggedIn && bookmark"
         variant="outline-danger"
-        @click="unbookmark"
+        @click="unsetAsBookmark"
         >unBookmark</b-button>
     <image-song :imageSong='song.albumImageURl'>
     </image-song>
@@ -53,7 +53,7 @@ export default {
         lyrics: null,
         tab: null
       },
-      isBookmarked: false
+      bookmark: null
     }
   },
   computed: {
@@ -65,20 +65,20 @@ export default {
     navigateTo (route) {
       this.$router.push(route)
     },
-    async bookmark () {
+    async setAsBookmark () {
       try {
         await BookmarksService.post({
-          songId: this.song.id,
+          songId: this.$store.state.route.params.songId,
           userId: this.$store.state.user.id
         })
       } catch (err) {
         console.log(err)
       }
     },
-    async unbookmark () {
+    async unsetAsBookmark () {
       try {
         await BookmarksService.delete({
-          songId: this.song.id,
+          songId: this.$store.state.route.params.songId,
           userId: this.$store.state.user.id
         })
       } catch (err) {
@@ -91,12 +91,10 @@ export default {
     this.song = (await SongsService.show(songId)).data
 
     try {
-      const bookmark = (await BookmarksService.index({
+      this.bookmark = (await BookmarksService.index({
         songId: songId,
         userId: this.$store.state.user.id
       })).data
-      this.isBookmarked = !!bookmark
-      console.log(bookmark)
     } catch (err) {
       console.log(err)
     }
