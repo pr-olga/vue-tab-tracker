@@ -1,16 +1,16 @@
 <template>
-    <section class="songs">
-      <b-row align-h="center">
-        <b-col cols="12" md="7">
+  <section class="songs">
+  <b-row>
+    <b-col cols="8" xs="12">
+      <div>
           <h1>Songs</h1>
-        </b-col>
-      </b-row>
+      </div>
         <search-songs />
-        <div v-bind:key="song.id" v-for="song in songs">
-          {{song.id}} -
-          {{song.title}} -
-          {{song.artist}} -
-          {{song.album}}
+          <div v-bind:key="song.id" v-for="song in songs">
+            {{song.id}} -
+            {{song.title}} -
+            {{song.artist}} -
+            {{song.album}}
           <div>
             <b-button variant="outline-primary"
             @click="navigateTo({
@@ -21,9 +21,16 @@
             })"
             >View</b-button>
           </div>
-
         </div>
-    </section>
+    </b-col>
+    <b-col cols="4" xs="12">
+      <h2>
+        Bookmarks
+      </h2>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </b-col>
+  </b-row>
+  </section>
 </template>
 
 <script>
