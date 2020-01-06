@@ -12,7 +12,7 @@
             {{song.artist}} -
             {{song.album}}
           <div>
-            <b-button variant="outline-primary"
+            <b-button variant="primary"
             @click="navigateTo({
               name: 'song',
               params: {

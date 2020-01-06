@@ -18,5 +18,21 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.bg-success {
+  background-color: #002627!important;
+}
+
+.btn-primary,
+.btn-success,
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #00bcbc;
+  border-color: #00bcbc;
+
+  &:hover{
+    background-color: #00bcbc;
+    border-color: #00bcbc;
+    opacity: 0.7;
+  }
+}
 </style>
