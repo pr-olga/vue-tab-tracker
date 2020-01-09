@@ -24,10 +24,7 @@
         </div>
     </b-col>
     <b-col cols="4" xs="12">
-      <h2>
-        Bookmarks
-      </h2>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+     <songs-bookmarks />
     </b-col>
   </b-row>
   </section>
@@ -36,6 +33,7 @@
 <script>
 import SongsService from '@/services/SongsService'
 import SearchSongs from './SearchSongs'
+import SongsBookmarks from './SongsBookmarks'
 
 export default {
   name: 'Songs',
@@ -58,7 +56,8 @@ export default {
     }
   },
   components: {
-    SearchSongs
+    SearchSongs,
+    SongsBookmarks
   }
 }
 </script>
